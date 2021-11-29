@@ -88,6 +88,9 @@ export default {
     submitForm() {
       this.$store.dispatch("createPost", this.form);
       this.hideModal();
+      this.form.title = "";
+      this.form.description = "";
+      this.form.url = "";
     },
   },
 };
