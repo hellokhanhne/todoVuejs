@@ -1,28 +1,42 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Navbar v-if="isAuthenticated" />
+    <Loading />
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Loading from "./components/Loading.vue";
+import Navbar from "./components/Navbar.vue";
+import { mapGetters } from "vuex";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: { Loading, Navbar },
+  computed: {
+    ...mapGetters(["isAuthenticated"]),
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-position: center;
+  background-size: cover;
+}
+.btn-add-todo {
+  position: fixed;
+  bottom: 30px;
+  font-size: 1.3rem;
+  right: 50px;
+}
+.row {
+  margin-left: 0;
+  margin-right: 0;
 }
 </style>
