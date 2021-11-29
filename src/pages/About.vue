@@ -1,6 +1,9 @@
 <template>
   <div class="d-flex justify-content-center align-items-center mt-5">
-    <a href="https://github.com/hellokhanhne/todoVuejs" class="btn btn-primary"
+    <a
+      href="https://github.com/hellokhanhne/todoVuejs"
+      target="_blank"
+      class="btn btn-primary"
       >Download source code in Github.com</a
     >
   </div>
